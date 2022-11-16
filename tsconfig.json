@@ -28,7 +28,6 @@
       "@pages/*": ["pages/*"],
       "@constants": ["constants.ts"],
       "@types": ["types"],
-      "@routes": ["routes"],
       "@api": ["api"],
       "@hooks/*": ["hooks/*"]
     },
