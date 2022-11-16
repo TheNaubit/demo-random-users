@@ -17,5 +17,5 @@ You can check this project deployed here: []()
 
 ## How to install and run by yourself?
 - Clone this repo in your computer and inside the root folder of this project, install the libraries (you can use ```npm i```, ```yarn``` or even ```pnpm i```)
-- Once the libraries are installed, launch the project with ```npm run dev```, ```yarn dev``` or ```pnpm run dev```
+- Once the libraries are installed, launch the project with ```npm run start```, ```yarn start``` or ```pnpm run start```
 - That's it!
