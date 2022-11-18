@@ -2,11 +2,11 @@
 
 A little example where you can see a list of users (random, obtained from a random API) and also the details of each specific users (including a map location). The project uses React.js (started the project with CRA), Typescript, React Query, MUI, React Context (with hooks!), and Open Layers.
 
-![]()
+![Demo Random Users]()
 
 ## Live Demo
 
-You can check this project deployed here: []()
+You can check this project deployed here: [https://demo-random-users.pages.dev/](https://demo-random-users.pages.dev/)
 
 ## Stack Used
 
