@@ -1,0 +1,10 @@
+node_modules
+# Ignore artifacts:
+build
+coverage
+.gitignore
+.npmrc
+.prettierignore
+yarn.lock
+package-lock.json
+pnpm-lock.json
