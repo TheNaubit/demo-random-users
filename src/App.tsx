@@ -3,35 +3,32 @@
  * since it is more like a container for the pages and not a page
  * by itself
  */
+import { HomePage } from "@pages/HomePage";
+import { MapProvider } from "@contexts/MapContext";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { UsersProvider } from "@contexts/UsersContext";
+import { SnackbarProvider } from "notistack";
 
-import logo from '@assets/logo.svg';
-import { useLogger } from '@hooks/useLogger';
-import { withStore } from 'react-context-hook';
-import { Box, Container, Link, Typography } from '@mui/material';
-import { Image } from 'mui-image'
+const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: {
+      refetchOnWindowFocus: false,
+    },
+  },
+});
 
 function App() {
-  const { debug } = useLogger({tag: "App"})
-
-  debug("Rendering app container")
-  
   return (
-    <Container maxWidth="sm">
-      <Box sx={{ my: 4 }}>
-        <Image src={logo} alt="logo" showLoading />
-        <Typography variant="body1" component="p">
-          Edit <code>src/App.tsx</code> and save to reload.
-        </Typography>
-        <Link
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </Link>
-      </Box>
-    </Container>
+    <SnackbarProvider maxSnack={3}>
+      <QueryClientProvider client={queryClient}>
+        <UsersProvider>
+          <MapProvider>
+            <HomePage />
+          </MapProvider>
+        </UsersProvider>
+      </QueryClientProvider>
+    </SnackbarProvider>
   );
 }
 
-export default withStore(App);
+export default App;
