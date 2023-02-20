@@ -8,6 +8,8 @@ import { MapProvider } from "@contexts/MapContext";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { UsersProvider } from "@contexts/UsersContext";
 import { SnackbarProvider } from "notistack";
+import LivecycleSDK from '@livecycle/sdk';
+import { useEffect } from "react";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -18,6 +20,10 @@ const queryClient = new QueryClient({
 });
 
 function App() {
+  useEffect(() => {
+    LivecycleSDK.init().catch(console.error)
+  }, [])
+
   return (
     <SnackbarProvider maxSnack={3}>
       <QueryClientProvider client={queryClient}>
